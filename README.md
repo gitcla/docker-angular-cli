@@ -62,4 +62,5 @@ That's it!  :-)
 
 If docker is installed on a virtual machine the folder where the code reside can be shared on the host with Samba.
 
-This is a better option than using a Shared Folder configured on VirtualBox because the file system where the project reside is Linux native.  Node uses symbolic links per default on Linux and if your host is Windows an NTFS doesn't have this feature.
+This is a better option than using a Shared Folder configured on VirtualBox because the file system where the project resides is Linux native.
+Node uses symbolic links per default and if your file system doesn't support them you could run in trouble.
