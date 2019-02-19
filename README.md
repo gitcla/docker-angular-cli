@@ -57,3 +57,9 @@ docker run -v $PWD/$PROJECT_NAME:/app/ node-ng:7.3.1-cli /bin/bash -c "cd /app &
 ```
 
 That's it!  :-)
+
+## Access data on your Virtual Machine
+
+If docker is installed on a virtual machine the folder where the code reside can be shared on the host with Samba.
+
+This is a better option than using a Shared Folder configured on VirtualBox because the file system where the project reside is Linux native.  Node uses symbolic links per default on Linux and if your host is Windows an NTFS doesn't have this feature.
