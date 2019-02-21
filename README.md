@@ -16,7 +16,7 @@ You can build it with the build.sh script provided that executes the following c
 docker build -t node-ng:7.3.1-cli .
 ```
 
-The image can be easily shared with your team and the continuous integration system with a Docker Registry.
+The image can be easily shared with your team and the continuous integration system with a Docker Registry.  An image already built can be pulled here: https://hub.docker.com/r/dockla/node-ng
 
 ## Initialize a new Angular Project
 
