@@ -2,9 +2,9 @@
 
 A development environment for Angular with NodeJS and Angular CLI in a containerized platform.
 
-This project uses the following container:
+This project uses the following software:
 
-- Node official image https://hub.docker.com/_/node
+- Node official image from Docker Hub: https://hub.docker.com/_/node
 - Angular CLI deployed on the node image
 
 ## Initialize the base image
