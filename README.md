@@ -29,7 +29,10 @@ The ng-init.sh executes the following commands:
 
 PROJECT_NAME=hello-angular
 
-docker run -v $PWD:/app/ node-ng:7.3.1-cli /bin/bash -c "cd /app && ng new $PROJECT_NAME --style=scss"
+docker run -v $PWD:/app/            \
+           --user $(id -u):$(id -g) \
+           node-ng:7.3.1-cli        \
+           /bin/bash -c "cd /app && ng new $PROJECT_NAME --style=scss"
 ```
 
 At the end you will have a new folder with a project initialized.
@@ -43,7 +46,11 @@ You can run the development server with:
 
 PROJECT_NAME=hello-angular
 
-docker run -p 4200:4200 -v $PWD/$PROJECT_NAME:/app/ node-ng:7.3.1-cli /bin/bash -c "cd /app && ng serve --host 0.0.0.0"
+docker run -p 4200:4200                \
+           -v $PWD/$PROJECT_NAME:/app/ \
+           --user $(id -u):$(id -g)    \
+           node-ng:7.3.1-cli           \
+           /bin/bash -c "cd /app && ng serve --host 0.0.0.0"
 ```
 
 ## Build the production code
@@ -55,7 +62,11 @@ You can use the container to build the production code with:
 
 PROJECT_NAME=hello-angular
 
-docker run -v $PWD/$PROJECT_NAME:/app/ node-ng:7.3.1-cli /bin/bash -c "cd /app && ng build --prod"
+docker run                       \
+     -v $PWD/$PROJECT_NAME:/app/ \
+     --user $(id -u):$(id -g)    \
+     node-ng:7.3.1-cli           \
+     /bin/bash -c "cd /app && ng build --prod"
 ```
 
 That's it!  :-)
